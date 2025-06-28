@@ -21,6 +21,7 @@ body {
   /* TODO: see if this margin will cause issues with the footer later */
   margin: 0 auto;
   /* TODO: add dark colors */
+
   --main-color: hsl(191.93deg 87.37% 37.25%);
   --drop-shadow: drop-shadow(2px 2px 2px darkgrey);
   --box-shadow: 2px 2px 2px darkgrey;
@@ -168,9 +169,19 @@ main {
   box-shadow: var(--box-shadow);
 }
 
+.project-img {
+  height: auto;
+  aspect-ratio: 3.5 / 2;
+  object-fit: cover;
+  object-position: top;
+}
+
 .project-info {
   padding: 0 1rem 1rem 1rem;
   background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-title {
