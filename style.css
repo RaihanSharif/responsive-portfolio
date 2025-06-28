@@ -3,18 +3,34 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 body {
-  line-height: 1.5rem;
+  font-size: 1.2rem;
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
   font-variation-settings: "wdth" 100;
-  --main-color: hsl(191.93deg 87.37% 37.25%);
+
   /* TODO: add dark colors */
+  --main-color: hsl(191.93deg 87.37% 37.25%);
   --drop-shadow: drop-shadow(2px 2px 2px darkgrey);
+  --box-shadow: 2px 2px 2px darkgrey;
+  --low-padding: 1rem;
+  --med-padding: 3rem;
+  --high-padding: 5rem;
+
+  --light-text: rgb(40, 38, 38);
+
+  --small-heading: 2rem;
+  --med-heading: 2.5rem;
+  --big-heading: 4rem;
 }
 
 h1,
@@ -24,12 +40,26 @@ h3 {
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  line-height: 1.5rem;
 }
 
 img {
   display: block;
   width: 100%;
   object-fit: contain;
+}
+
+header {
+  display: flex;
+}
+
+.background:first-child {
+  filter: var(--drop-shadow);
 }
 
 .background {
@@ -42,6 +72,74 @@ img {
   transform: scaleY(2.2) scaleX(1.5) rotate(-5deg) translateY(-2.8rem);
 }
 
-.background:first-child {
-  filter: var(--drop-shadow);
+.profile-container,
+main,
+footer {
+  padding: 3rem;
 }
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: var(--high-padding);
+}
+
+.image-and-name-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+}
+
+.image-and-name-container > h1 {
+  position: absolute;
+  transform: translateY(-90%);
+  width: 100%;
+  font-size: var(--big-heading);
+  padding-bottom: var(--low-padding);
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.image-and-name-container > img {
+  display: block;
+  width: min(40vw, 400px);
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+#about-container {
+  background-color: white;
+  opacity: 0.9;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+  padding: var(--low-padding);
+  height: fit-content;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--low-padding);
+}
+#about-container > p {
+  color: var(--light-text);
+}
+#about-container > h1 {
+  font-size: var(--med-heading);
+}
+
+#about-container .icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--low-padding);
+  justify-self: flex-end;
+}
+
+.icons img {
+  margin: 1rem 0;
+  max-width: 2rem;
+}
+
+/* Everything above this is global and header styles */
