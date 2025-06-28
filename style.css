@@ -137,9 +137,14 @@ footer {
   justify-self: flex-end;
 }
 
-.icons img {
+.link-icon {
   margin: 1rem 0;
   max-width: 2rem;
+  transition: transform 0.25s ease-out;
+}
+
+.link-icon:hover {
+  transform: scale(1.2);
 }
 
 /* Everything above this is global and header styles */
