@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  --main-color: hsl(191.93deg 87.37% 37.25%);
+  /* TODO: add dark colors */
+  --drop-shadow: drop-shadow(2px 2px 2px darkgrey);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+}
+
+.background {
+  position: absolute;
+  background-color: var(--main-color);
+  isolation: isolate;
+  z-index: -1;
+  width: 100vw;
+  height: min(40vw, 200px);
+  transform: scaleY(2.2) scaleX(1.5) rotate(-5deg) translateY(-2.8rem);
+}
+
+.background:first-child {
+  filter: var(--drop-shadow);
+}
