@@ -17,7 +17,9 @@ body {
   font-weight: normal;
   font-style: normal;
   font-variation-settings: "wdth" 100;
-
+  max-width: 1440px;
+  /* TODO: see if this margin will cause issues with the footer later */
+  margin: 0 auto;
   /* TODO: add dark colors */
   --main-color: hsl(191.93deg 87.37% 37.25%);
   --drop-shadow: drop-shadow(2px 2px 2px darkgrey);
@@ -99,13 +101,13 @@ footer {
   transform: translateY(-90%);
   width: 100%;
   font-size: var(--big-heading);
-  padding-bottom: var(--low-padding);
+
   text-shadow: 2px 2px 2px #000000;
 }
 
 .image-and-name-container > img {
   display: block;
-  width: min(40vw, 400px);
+  width: min(40vw, 450px);
   object-fit: contain;
   border-radius: 5px;
 }
@@ -148,3 +150,37 @@ footer {
 }
 
 /* Everything above this is global and header styles */
+main {
+  padding: var(--high-padding);
+}
+
+.project-cards {
+  margin-top: 1rem;
+  display: grid;
+  gap: var(--med-padding);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  box-shadow: var(--box-shadow);
+}
+
+.project-info {
+  padding: 0 1rem 1rem 1rem;
+  background-color: var(--main-color);
+}
+
+.project-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  align-self: center;
+}
