@@ -169,7 +169,6 @@ footer {
   border-radius: 12px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(203, 208, 216, 0.75);
   box-shadow: var(--box-shadow);
 }
 
